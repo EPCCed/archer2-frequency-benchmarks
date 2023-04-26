@@ -1,0 +1,40 @@
+
+The following have been reloaded with a version change:
+  1) PrgEnv-cray/8.0.0 => PrgEnv-cray/8.3.3
+  2) cce/11.0.4 => cce/13.0.2
+  3) cray-libsci/21.04.1.1 => cray-libsci/21.08.1.2
+  4) cray-mpich/8.1.4 => cray-mpich/8.1.15
+  5) craype/2.7.6 => craype/2.7.15
+
+	linux-vdso.so.1 (0x00002b6252294000)
+	libhdf5_hl_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_hl_parallel_crayclang.so.200 (0x00002b6252297000)
+	libhdf5_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_parallel_crayclang.so.200 (0x00002b6252494000)
+	libmpi_cray.so.12 => /opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12 (0x00002b62528ad000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00002b62552d0000)
+	libstdc++.so.6 => /opt/cray/pe/gcc-libs/libstdc++.so.6 (0x00002b62554d4000)
+	libquadmath.so.0 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libquadmath.so.0 (0x00002b62558a7000)
+	libmodules.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libmodules.so.1 (0x00002b6255ae7000)
+	libfi.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libfi.so.1 (0x00002b6255d03000)
+	libcraymath.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymath.so.1 (0x00002b625660e000)
+	libf.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libf.so.1 (0x00002b62568ef000)
+	libu.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libu.so.1 (0x00002b6256b84000)
+	libcsup.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcsup.so.1 (0x00002b6256e99000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00002b625709f000)
+	libm.so.6 => /lib64/libm.so.6 (0x00002b62572be000)
+	libcraymp.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymp.so.1 (0x00002b62575f6000)
+	libunwind.so.1 => /opt/cray/pe/cce/13.0.2/cce-clang/x86_64/lib/libunwind.so.1 (0x00002b62522d4000)
+	libc.so.6 => /lib64/libc.so.6 (0x00002b62578bd000)
+	libz.so.1 => /lib64/libz.so.1 (0x00002b6257c78000)
+	libfabric.so.1 => /opt/cray/libfabric/1.11.0.4.71/lib64/libfabric.so.1 (0x00002b6257e8f000)
+	libatomic.so.1 => /opt/cray/pe/gcc-libs/libatomic.so.1 (0x00002b625813c000)
+	librt.so.1 => /lib64/librt.so.1 (0x00002b6258344000)
+	libpmi2.so.0 => /opt/cray/pe/lib64/libpmi2.so.0 (0x00002b625854c000)
+	libpmi.so.0 => /opt/cray/pe/lib64/libpmi.so.0 (0x00002b6258780000)
+	/lib64/ld-linux-x86-64.so.2 (0x00002b625226c000)
+	libgcc_s.so.1 => /opt/cray/pe/gcc-libs/libgcc_s.so.1 (0x00002b6258982000)
+	libgfortran.so.5 => /opt/cray/pe/gcc-libs/libgfortran.so.5 (0x00002b6258b9a000)
+	librdmacm.so.1 => /usr/lib64/librdmacm.so.1 (0x00002b6259051000)
+	libibverbs.so.1 => /usr/lib64/libibverbs.so.1 (0x00002b625926b000)
+	libpals.so.0 => /usr/lib64/libpals.so.0 (0x00002b6259487000)
+	libnl-3.so.200 => /usr/lib64/libnl-3.so.200 (0x00002b625968c000)
+	libnl-route-3.so.200 => /usr/lib64/libnl-route-3.so.200 (0x00002b62598ae000)

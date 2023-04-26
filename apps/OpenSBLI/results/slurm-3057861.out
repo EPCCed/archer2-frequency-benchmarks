@@ -1,0 +1,44 @@
+
+The following have been reloaded with a version change:
+  1) PrgEnv-cray/8.0.0 => PrgEnv-cray/8.3.3
+  2) cce/11.0.4 => cce/13.0.2
+  3) cray-libsci/21.04.1.1 => cray-libsci/21.08.1.2
+  4) cray-mpich/8.1.4 => cray-mpich/8.1.15
+  5) craype/2.7.6 => craype/2.7.15
+
+	linux-vdso.so.1 (0x00007ffe6b9ba000)
+	libhdf5_hl_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_hl_parallel_crayclang.so.200 (0x00002acf42512000)
+	libhdf5_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_parallel_crayclang.so.200 (0x00002acf42713000)
+	libmpi_cray.so.12 => /opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12 (0x00002acf42b2c000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00002acf4554f000)
+	libstdc++.so.6 => /opt/cray/pe/gcc-libs/libstdc++.so.6 (0x00002acf45753000)
+	libquadmath.so.0 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libquadmath.so.0 (0x00002acf45b26000)
+	libmodules.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libmodules.so.1 (0x00002acf45d66000)
+	libfi.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libfi.so.1 (0x00002acf45f82000)
+	libcraymath.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymath.so.1 (0x00002acf4688d000)
+	libf.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libf.so.1 (0x00002acf46b6e000)
+	libu.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libu.so.1 (0x00002acf46e03000)
+	libcsup.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcsup.so.1 (0x00002acf47118000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00002acf4731e000)
+	libm.so.6 => /lib64/libm.so.6 (0x00002acf4753d000)
+	libcraymp.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymp.so.1 (0x00002acf47875000)
+	libunwind.so.1 => /opt/cray/pe/cce/13.0.2/cce-clang/x86_64/lib/libunwind.so.1 (0x00002acf4254f000)
+	libc.so.6 => /lib64/libc.so.6 (0x00002acf47b3c000)
+	libz.so.1 => /lib64/libz.so.1 (0x00002acf47ef7000)
+	libfabric.so.1 => /opt/cray/libfabric/1.11.0.4.71/lib64/libfabric.so.1 (0x00002acf4810e000)
+	libatomic.so.1 => /opt/cray/pe/gcc-libs/libatomic.so.1 (0x00002acf483bb000)
+	librt.so.1 => /lib64/librt.so.1 (0x00002acf485c3000)
+	libpmi2.so.0 => /opt/cray/pe/lib64/libpmi2.so.0 (0x00002acf487cb000)
+	libpmi.so.0 => /opt/cray/pe/lib64/libpmi.so.0 (0x00002acf489ff000)
+	/lib64/ld-linux-x86-64.so.2 (0x00002acf424eb000)
+	libgcc_s.so.1 => /opt/cray/pe/gcc-libs/libgcc_s.so.1 (0x00002acf48c01000)
+	libgfortran.so.5 => /opt/cray/pe/gcc-libs/libgfortran.so.5 (0x00002acf48e19000)
+	librdmacm.so.1 => /usr/lib64/librdmacm.so.1 (0x00002acf492d0000)
+	libibverbs.so.1 => /usr/lib64/libibverbs.so.1 (0x00002acf494ea000)
+	libpals.so.0 => /usr/lib64/libpals.so.0 (0x00002acf49706000)
+	libnl-3.so.200 => /usr/lib64/libnl-3.so.200 (0x00002acf4990b000)
+	libnl-route-3.so.200 => /usr/lib64/libnl-route-3.so.200 (0x00002acf49b2d000)
+srun: error: Node failure on nid004683
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 3057861.0 ON nid001000 CANCELLED AT 2023-02-09T19:22:41 DUE TO NODE FAILURE, SEE SLURMCTLD LOG FOR DETAILS ***
+slurmstepd: error: *** JOB 3057861 ON nid001000 CANCELLED AT 2023-02-09T19:22:41 DUE TO NODE FAILURE, SEE SLURMCTLD LOG FOR DETAILS ***

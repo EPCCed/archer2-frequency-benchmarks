@@ -1,0 +1,101 @@
+
+The following have been reloaded with a version change:
+  1) PrgEnv-cray/8.0.0 => PrgEnv-cray/8.3.3
+  2) cce/11.0.4 => cce/13.0.2
+  3) cray-libsci/21.04.1.1 => cray-libsci/21.08.1.2
+  4) cray-mpich/8.1.4 => cray-mpich/8.1.15
+  5) craype/2.7.6 => craype/2.7.15
+
+	linux-vdso.so.1 (0x00007ffd6bf06000)
+	libhdf5_hl_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_hl_parallel_crayclang.so.200 (0x00002b99d4c9c000)
+	libhdf5_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_parallel_crayclang.so.200 (0x00002b99d4e9d000)
+	libmpi_cray.so.12 => /opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12 (0x00002b99d52b6000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00002b99d7cd9000)
+	libstdc++.so.6 => /opt/cray/pe/gcc-libs/libstdc++.so.6 (0x00002b99d7edd000)
+	libquadmath.so.0 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libquadmath.so.0 (0x00002b99d82b0000)
+	libmodules.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libmodules.so.1 (0x00002b99d84f0000)
+	libfi.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libfi.so.1 (0x00002b99d870c000)
+	libcraymath.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymath.so.1 (0x00002b99d9017000)
+	libf.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libf.so.1 (0x00002b99d92f8000)
+	libu.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libu.so.1 (0x00002b99d958d000)
+	libcsup.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcsup.so.1 (0x00002b99d98a2000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00002b99d9aa8000)
+	libm.so.6 => /lib64/libm.so.6 (0x00002b99d9cc7000)
+	libcraymp.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymp.so.1 (0x00002b99d9fff000)
+	libunwind.so.1 => /opt/cray/pe/cce/13.0.2/cce-clang/x86_64/lib/libunwind.so.1 (0x00002b99d4cd9000)
+	libc.so.6 => /lib64/libc.so.6 (0x00002b99da2c6000)
+	libz.so.1 => /lib64/libz.so.1 (0x00002b99da681000)
+	libfabric.so.1 => /opt/cray/libfabric/1.11.0.4.71/lib64/libfabric.so.1 (0x00002b99da898000)
+	libatomic.so.1 => /opt/cray/pe/gcc-libs/libatomic.so.1 (0x00002b99dab45000)
+	librt.so.1 => /lib64/librt.so.1 (0x00002b99dad4d000)
+	libpmi2.so.0 => /opt/cray/pe/lib64/libpmi2.so.0 (0x00002b99daf55000)
+	libpmi.so.0 => /opt/cray/pe/lib64/libpmi.so.0 (0x00002b99db189000)
+	/lib64/ld-linux-x86-64.so.2 (0x00002b99d4c75000)
+	libgcc_s.so.1 => /opt/cray/pe/gcc-libs/libgcc_s.so.1 (0x00002b99db38b000)
+	libgfortran.so.5 => /opt/cray/pe/gcc-libs/libgfortran.so.5 (0x00002b99db5a3000)
+	librdmacm.so.1 => /usr/lib64/librdmacm.so.1 (0x00002b99dba5a000)
+	libibverbs.so.1 => /usr/lib64/libibverbs.so.1 (0x00002b99dbc74000)
+	libpals.so.0 => /usr/lib64/libpals.so.0 (0x00002b99dbe90000)
+	libnl-3.so.200 => /usr/lib64/libnl-3.so.200 (0x00002b99dc095000)
+	libnl-route-3.so.200 => /usr/lib64/libnl-route-3.so.200 (0x00002b99dc2b7000)
+process_vm_readv: No such process
+PE 13484: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(MPL_backtrace_show+0x26) [0x2b2bbfc4e94b]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(+0x1ff8594) [0x2b2bbf5fc594]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(+0x244f351) [0x2b2bbfa53351]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(MPI_Irecv+0x11ac) [0x2b2bbde27bdc]
+process_vm_readv: No such process
+PE 21057: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 13485: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(MPL_backtrace_show+0x26) [0x2af3f900c94b]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(+0x1ff8594) [0x2af3f89ba594]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(+0x244f351) [0x2af3f8e11351]
+/opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12(MPI_Irecv+0x11ac) [0x2af3f71e5bdc]
+/work/z19/z19/shared/ARCHER2_CSF/OpenSBLI/source/Benchmark/OpenSBLI_mpi_openmp() [0x24178c]
+/work/z19/z19/shared/ARCHER2_CSF/OpenSBLI/source/Benchmark/OpenSBLI_mpi_openmp() [0x21442b]
+/work/z19/z19/shared/ARCHER2_CSF/OpenSBLI/source/Benchmark/OpenSBLI_mpi_openmp() [0x20dc40]
+/lib64/libc.so.6(__libc_start_main+0xea) [0x2af3fb9f634a]
+/work/z19/z19/shared/ARCHER2_CSF/OpenSBLI/source/Benchmark/OpenSBLI_mpi_openmp() [0x20ad3a]
+process_vm_readv: No such process
+PE 22304: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 22305: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 9383: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+slurmstepd: error: *** JOB 3047300 ON nid001003 CANCELLED AT 2023-02-07T17:52:57 DUE TO TIME LIMIT ***
+process_vm_readv: No such process
+PE 22327: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+slurmstepd: error: *** STEP 3047300.0 ON nid001003 CANCELLED AT 2023-02-07T17:52:57 DUE TO TIME LIMIT ***
+process_vm_readv: No such process
+PE 13346: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 13609: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+process_vm_readv: No such process
+PE 10659: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 10545: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 10911: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 10271: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+process_vm_readv: No such process
+PE 9599: process_vm_readv returned: Invalid argument
+process_vm_readv: No such process
+PE 18605: process_vm_readv returned: Invalid argument
+Assertion failed in file ../src/mpid/ch4/shm/cray_common/cray_common_memops.c at line 456: 0
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.

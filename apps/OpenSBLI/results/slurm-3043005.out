@@ -1,0 +1,43 @@
+
+The following have been reloaded with a version change:
+  1) PrgEnv-cray/8.0.0 => PrgEnv-cray/8.3.3
+  2) cce/11.0.4 => cce/13.0.2
+  3) cray-libsci/21.04.1.1 => cray-libsci/21.08.1.2
+  4) cray-mpich/8.1.4 => cray-mpich/8.1.15
+  5) craype/2.7.6 => craype/2.7.15
+
+	linux-vdso.so.1 (0x00007fff795f1000)
+	libhdf5_hl_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_hl_parallel_crayclang.so.200 (0x00002b063bfe2000)
+	libhdf5_parallel_crayclang.so.200 => /opt/cray/pe/hdf5-parallel/1.12.1.1/crayclang/10.0/lib/libhdf5_parallel_crayclang.so.200 (0x00002b063c1e3000)
+	libmpi_cray.so.12 => /opt/cray/pe/mpich/8.1.15/ofi/crayclang/10.0/lib/libmpi_cray.so.12 (0x00002b063c5fc000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00002b063f01f000)
+	libstdc++.so.6 => /opt/cray/pe/gcc-libs/libstdc++.so.6 (0x00002b063f223000)
+	libquadmath.so.0 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libquadmath.so.0 (0x00002b063f5f6000)
+	libmodules.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libmodules.so.1 (0x00002b063f836000)
+	libfi.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libfi.so.1 (0x00002b063fa52000)
+	libcraymath.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymath.so.1 (0x00002b064035d000)
+	libf.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libf.so.1 (0x00002b064063e000)
+	libu.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libu.so.1 (0x00002b06408d3000)
+	libcsup.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcsup.so.1 (0x00002b0640be8000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00002b0640dee000)
+	libm.so.6 => /lib64/libm.so.6 (0x00002b064100d000)
+	libcraymp.so.1 => /opt/cray/pe/cce/13.0.2/cce/x86_64/lib/libcraymp.so.1 (0x00002b0641345000)
+	libunwind.so.1 => /opt/cray/pe/cce/13.0.2/cce-clang/x86_64/lib/libunwind.so.1 (0x00002b063c01f000)
+	libc.so.6 => /lib64/libc.so.6 (0x00002b064160c000)
+	libz.so.1 => /lib64/libz.so.1 (0x00002b06419c7000)
+	libfabric.so.1 => /opt/cray/libfabric/1.11.0.4.71/lib64/libfabric.so.1 (0x00002b0641bde000)
+	libatomic.so.1 => /opt/cray/pe/gcc-libs/libatomic.so.1 (0x00002b0641e8b000)
+	librt.so.1 => /lib64/librt.so.1 (0x00002b0642093000)
+	libpmi2.so.0 => /opt/cray/pe/lib64/libpmi2.so.0 (0x00002b064229b000)
+	libpmi.so.0 => /opt/cray/pe/lib64/libpmi.so.0 (0x00002b06424cf000)
+	/lib64/ld-linux-x86-64.so.2 (0x00002b063bfbb000)
+	libgcc_s.so.1 => /opt/cray/pe/gcc-libs/libgcc_s.so.1 (0x00002b06426d1000)
+	libgfortran.so.5 => /opt/cray/pe/gcc-libs/libgfortran.so.5 (0x00002b06428e9000)
+	librdmacm.so.1 => /usr/lib64/librdmacm.so.1 (0x00002b0642da0000)
+	libibverbs.so.1 => /usr/lib64/libibverbs.so.1 (0x00002b0642fba000)
+	libpals.so.0 => /usr/lib64/libpals.so.0 (0x00002b06431d6000)
+	libnl-3.so.200 => /usr/lib64/libnl-3.so.200 (0x00002b06433db000)
+	libnl-route-3.so.200 => /usr/lib64/libnl-route-3.so.200 (0x00002b06435fd000)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 3043005 ON nid002679 CANCELLED AT 2023-02-07T10:47:15 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 3043005.0 ON nid002679 CANCELLED AT 2023-02-07T10:47:15 DUE TO TIME LIMIT ***
