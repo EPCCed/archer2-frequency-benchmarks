@@ -1,0 +1,87 @@
+#!/bin/bash --login
+
+##### Slurm job options #####
+
+#SBATCH --job-name=CP2K_LiH_HFX-benchmark96
+#SBATCH --time=12:00:00
+#SBATCH --exclusive
+#SBATCH --nodes=96
+#SBATCH --tasks-per-node=32
+#SBATCH --cpus-per-task=4
+#SBATCH --qos=standard
+#SBATCH --partition=standard
+#SBATCH --account=z19
+#SBATCH --cpu-freq=2000000
+
+set -e
+
+# Set script parametes
+
+export WORKDIR="/work/z19/z19/jpr/Projects/ArmForge/CP2K"
+export JOBNAME=${SLURM_JOB_NAME}
+export JOBID=${SLURM_JOBID}
+
+##### Load modules #####
+
+module load load-epcc-module
+module load cp2k
+
+##### Set environment parameters #####
+
+export OMP_NUM_THREADS=4
+export OMP_PLACES=cores
+
+##### Set job parameters #####
+
+batch="srun"
+
+batchOpt="--hint=nomultithread --distribution=block:block --unbuffered"
+
+app="cp2k.psmp"
+
+appOpt="-i"
+
+appPar="input_bulk_HFX_3.inp"
+
+##### Save data #####
+
+outputRoot="${WORKDIR}/jobs/${JOBNAME}.${JOBID}"
+
+mkdir -p ${outputRoot}
+
+cd ${outputRoot}
+
+which ${app}                    &> ${outputRoot}/app
+ldd $( which ${app} ) 		&> ${outputRoot}/ldd
+env 				&> ${outputRoot}/env
+date 				&> ${outputRoot}/StartTime
+echo $SLURM_JOB_NODELIST	&> ${outputRoot}/nodelist
+cp $0			 	${outputRoot}/runscript
+module list 			&> ${outputRoot}/modules
+
+##### Copy input data #####
+
+cp ${WORKDIR}/input/BASIS_OPT 		        ${outputRoot}/BASIS_OPT
+cp ${WORKDIR}/input/POTENTIAL  		        ${outputRoot}/POTENTIAL 
+cp ${WORKDIR}/input/input_bulk_HFX_3.inp  	${outputRoot}/input_bulk_HFX_3.inp
+cp ${WORKDIR}/input/t_c_g.dat  		        ${outputRoot}/t_c_g.dat
+cp ${WORKDIR}/input/B88.wfn                     ${outputRoot}/B88.wfn
+
+##### submit job #####
+
+echo "----- Job start -----"
+
+CMD="${batch} ${batchOpt} ${app} ${appOpt} ${appPar} &> ${outputRoot}/log"
+
+eval ${CMD}
+
+##### clean up #####
+
+date                            &> ${outputRoot}/EndTime
+mv ${WORKDIR}/slurm-${JOBID}.out ${outputRoot}/slurm-${JOBID}.out
+
+
+#### end ####
+
+echo "----- Job complete -----"
+
