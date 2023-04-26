@@ -1,0 +1,24 @@
+==================================================================================
+It's Mon Mar 27 09:13:48 BST 2023.
+*** Starting onetep_launcher (node nid002058, PIDs 222283 222284 222285 222286 222287 222288 222289 222290 222291 222292 222293 222294 222295 222296 222297 222298)...
+    - ONETEP arguments: hBN-BP-hBN.dat
+    - Current directory: /mnt/lustre/a2fs-work2/work/z19/z19/shared/ARCHER2_CPUFreq_Assessment/ONETEP/hBN-BP-hBN
+    - Launcher executable directory: /mnt/lustre/a2fs-work1/work/y07/shared/apps/core/onetep/6.1.9.0/bin_CCE-LibSci
+    - (-e) ONETEP executable specified through command-line: onetep.archer2
+      ... trying onetep.archer2
+          -> does not exist or is unreadable
+      ... trying /mnt/lustre/a2fs-work1/work/y07/shared/apps/core/onetep/6.1.9.0/bin_CCE-LibSci/onetep.archer2
+          -> looks OK
+*** Setting up environment...
+    - (-s) Process stack size: unlimited
+    - (-t) OMP_NUM_THREADS: 8
+    - (-o) OMP_STACKSIZE: 64M
+    - (-c) Maximum core file size: 2048000
+    - (-d) decfort_dump_flag: n
+    - (-m) I_MPI_OFA_TRANSLATION_CACHE: 0
+    - (-m) I_MPI_DAPL_TRANSLATION_CACHE: 0
+    - (-m) I_MPI_DAPL_UD_TRANSLATION_CACHE: 0
+*** Starting ONETEP...
+    - /mnt/lustre/a2fs-work1/work/y07/shared/apps/core/onetep/6.1.9.0/bin_CCE-LibSci/onetep.archer2 hBN-BP-hBN.dat
+=================================================================================
+_________________________________________________________________________________
