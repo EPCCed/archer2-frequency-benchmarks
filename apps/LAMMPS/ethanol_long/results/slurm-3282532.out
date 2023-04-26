@@ -1,0 +1,149 @@
+rm: cannot remove 'ethanol.check': No such file or directory
+SLURM_CPU_FREQ_REQ=2250000
+LAMMPS (23 Jun 2022 - Update 3)
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 6 6 6
+Created orthogonal box = (0 0 0) to (192 192 192)
+  8 by 8 by 8 MPI processor grid
+Read molecule template CH3CH2OH:
+  1 molecules
+  0 fragments
+  9 atoms with max type 6
+  8 bonds with max type 5
+  13 angles with max type 7
+  12 dihedrals with max type 4
+  0 impropers with max type 0
+Created 294912 atoms
+  using lattice units in orthogonal box = (0 0 0) to (192 192 192)
+  create_atoms CPU = 0.739 seconds
+Setting atom values ...
+  32768 settings made for charge
+Setting atom values ...
+  32768 settings made for charge
+Setting atom values ...
+  65536 settings made for charge
+Setting atom values ...
+  98304 settings made for charge
+Setting atom values ...
+  32768 settings made for charge
+Setting atom values ...
+  32768 settings made for charge
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.18199716
+  grid = 50 50 50
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.037173906
+  estimated relative force accuracy = 0.00011194811
+  using double precision FFTW3
+  3d grid and FFT values/proc = 1728 400
+Generated 15 of 15 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update every 5 steps, delay 10 steps, check no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14
+  ghost atom cutoff = 14
+  binsize = 7, bins = 28 28 28
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/long, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 1
+Per MPI rank memory allocation (min/avg/max) = 13.05 | 13.06 | 13.07 Mbytes
+   Step          CPU            Temp          TotEng         E_pair         E_long         E_vdwl         Volume           Lx           Press     
+         0   0              300            447327.7       175889.01     -790673.05     -43731.476      7077888        192           -232.75202    
+      1000   5.2458603      298.49356      566574.1       133863.15     -793136.65     -60220.74       7077888        192            731.89214    
+Loop time of 5.24599 on 512 procs for 1000 steps with 294912 atoms
+
+Performance: 16.470 ns/day, 1.457 hours/ns, 190.622 timesteps/s
+98.3% CPU use with 512 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.889      | 2.3076     | 2.6861     |   8.4 | 43.99
+Bond    | 0.20221    | 0.23686    | 0.27247    |   2.4 |  4.51
+Kspace  | 1.0486     | 1.4607     | 1.9302     |  11.0 | 27.84
+Neigh   | 0.49406    | 0.49822    | 0.5024     |   0.3 |  9.50
+Comm    | 0.36319    | 0.47422    | 0.70395    |  14.2 |  9.04
+Output  | 0.0010836  | 0.0010888  | 0.0010944  |   0.0 |  0.02
+Modify  | 0.019578   | 0.23154    | 0.31367    |  20.0 |  4.41
+Other   |            | 0.03579    |            |       |  0.68
+
+Nlocal:            576 ave         676 max         456 min
+Histogram: 2 3 29 51 109 120 111 62 19 6
+Nghost:        5311.38 ave        5564 max        4979 min
+Histogram: 1 1 10 45 113 141 109 62 23 7
+Neighs:         137906 ave      172407 max       99960 min
+Histogram: 2 8 30 72 112 133 87 48 13 7
+
+Total # of neighbors = 70607717
+Ave neighs/atom = 239.41961
+Ave special neighs/atom = 7.3333333
+Neighbor list builds = 100
+Dangerous builds not checked
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.18199716
+  grid = 50 50 50
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.037173906
+  estimated relative force accuracy = 0.00011194811
+  using double precision FFTW3
+  3d grid and FFT values/proc = 1728 400
+Generated 15 of 15 mixed pair_coeff terms from geometric mixing rule
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 1000
+  Time step     : 1
+nid003730
+Per MPI rank memory allocation (min/avg/max) = 13.05 | 13.06 | 13.07 Mbytes
+   Step          CPU            Temp          TotEng         E_pair         E_long         E_vdwl         Volume           Lx           Press     
+      1000   0              298.49356      566574.1       133863.15     -793136.65     -60220.74       7077888        192            731.89214    
+     10000   64.995745      300.24356      541436.76      71869.536     -793618.99     -87099.954      7077888        192           -59.074192    
+     20000   168.64007      299.79663      516868.87      43307.373     -793947.74     -104217.51      7077888        192           -62.956923    
+     30000   296.6596       299.96165      506015.68      30716.053     -794252.8      -112299.4       7077888        192           -47.515422    
+     40000   436.56453      299.77836      500715.34      24994.527     -794283.32     -116405.66      7077888        192           -111.13169    
+     50000   579.50268      300.05877      497881.19      22013.848     -794383.94     -118548.82      7077888        192           -98.111862    
+     60000   724.11609      299.75507      496271.69      20231.415     -794436.36     -120009.11      7077888        192           -70.478058    
+     70000   869.3855       300.32392      494753.34      17631.319     -794463        -121503.66      7077888        192           -38.011909    
+     80000   1015.3977      299.20425      492743.61      17195.569     -794519.59     -122162.87      7077888        192           -60.197111    
+     90000   1161.6738      300.49312      494166.69      17348.369     -794511.62     -122216.43      7077888        192           -61.303624    
+    100000   1308.9933      299.79419      490762.9       14814.731     -794560.47     -123828.8       7077888        192           -70.451691    
+    101000   1323.7427      300.02504      491739.38      14870.104     -794543.34     -123554.23      7077888        192           -8.3953946    
+Loop time of 1323.74 on 512 procs for 100000 steps with 294912 atoms
+
+Performance: 6.527 ns/day, 3.677 hours/ns, 75.543 timesteps/s
+99.5% CPU use with 512 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 13.198     | 375.58     | 864.35     |1328.8 | 28.37
+Bond    | 1.7524     | 23.528     | 45.138     | 271.4 |  1.78
+Kspace  | 207.33     | 709.94     | 1086.8     | 995.8 | 53.63
+Neigh   | 144.76     | 146.41     | 148.27     |   6.7 | 11.06
+Comm    | 36.147     | 54.323     | 70.187     |  75.7 |  4.10
+Output  | 0.0020568  | 0.0021205  | 0.0021606  |   0.0 |  0.00
+Modify  | 5.5596     | 11.388     | 31.042     | 108.9 |  0.86
+Other   |            | 2.582      |            |       |  0.20
+
+Nlocal:            576 ave        1231 max           0 min
+Histogram: 165 32 20 23 18 30 23 36 37 128
+Nghost:        5279.17 ave       10780 max          14 min
+Histogram: 70 38 54 49 49 56 44 51 49 52
+Neighs:         246055 ave      609822 max           0 min
+Histogram: 190 25 29 38 25 15 30 23 60 77
+
+Total # of neighbors = 1.2598e+08
+Ave neighs/atom = 427.17829
+Ave special neighs/atom = 7.3333333
+Neighbor list builds = 10000
+Dangerous builds not checked
+Total wall time: 0:22:18
+slurmstepd: error: *** JOB 3282532 ON nid003730 CANCELLED AT 2023-03-17T16:40:50 DUE TO TIME LIMIT ***
