@@ -1,0 +1,7 @@
+\n++Energy use:
+JobID          NNodes   NTasks ReqCPUFreq ElapsedRaw ConsumedEnergyRaw 
+------------ -------- -------- ---------- ---------- ----------------- 
+3046332            96             Unknown       2263                   
+3046332.bat+        1        1          0       2263                 0 
+3046332.ext+       96       96          0       2263                 0 
+3046332.0          96    12288      2.25G       2134          42414846 
