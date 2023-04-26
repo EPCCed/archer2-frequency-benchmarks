@@ -1,0 +1,148 @@
+#!/bin/bash
+
+# Slurm job options (name, compute nodes, job time)
+#SBATCH --job-name=benchio
+#SBATCH --time=12:00:00
+#SBATCH --nodes=16
+#SBATCH --tasks-per-node=128
+#SBATCH --cpus-per-task=1
+# Replace [budget code] below with your budget code (e.g. t01)
+#SBATCH --account=z19
+#SBATCH --partition=standard
+#SBATCH --qos=standard
+
+cat $0
+
+module swap craype-network-ofi craype-network-ucx
+module swap cray-mpich cray-mpich-ucx
+
+module use /work/z19/shared/sfarr/modulefiles
+module load adios/2.8.3
+
+module load cray-hdf5-parallel
+module load cray-netcdf-hdf5parallel
+
+export OMP_NUM_THREADS=1
+
+ulimit -s unlimited
+
+# Launch the parallel job
+
+export FI_OFI_RXM_SAR_LIMIT=64K
+export MPICH_MPIIO_HINTS=*:cray_cb_write_lock_mode=2,*:cray_cb_nodes_multiplier=4
+
+srun --unbuffered --distribution=block:block --hint=nomultithread \
+	/work/z19/z19/shared/ARCHER2_CSF/benchio/benchio/benchio 2048 2048 2048 global serial  mpiio adios
+
+sleep 120
+echo "\n++Energy use:"
+sacct -j $SLURM_JOB_ID --format="JobID,NNodes,NTasks,ReqCPUFreq,ElapsedRaw,ConsumedEnergyRaw"
+
+sbatch sub_local.slurm
+
+Inactive Modules:
+  1) cray-mpich
+
+
+Lmod is automatically replacing "cce/11.0.4" with "gcc/10.2.0".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.0.0" with "PrgEnv-gnu/8.0.0".
+
+
+Lmod is automatically replacing "craype-network-ucx" with "craype-network-ofi".
+
+
+Inactive Modules:
+  1) cray-mpich-ucx
+
+
+ Simple Parallel IO benchmark
+ ----------------------------
+
+ Running on         2048  process(es)
+
+ Running on           16  nodes
+ Node number           0  is nid005864 with          128  processes
+ Node number           1  is nid005865 with          128  processes
+ Node number           2  is nid005866 with          128  processes
+ Node number           3  is nid005867 with          128  processes
+ Node number           4  is nid005869 with          128  processes
+ Node number           5  is nid005870 with          128  processes
+ Node number           6  is nid005873 with          128  processes
+ Node number           7  is nid005874 with          128  processes
+ Node number           8  is nid005876 with          128  processes
+ Node number           9  is nid005877 with          128  processes
+ Node number          10  is nid005934 with          128  processes
+ Node number          11  is nid005955 with          128  processes
+ Node number          12  is nid005957 with          128  processes
+ Node number          13  is nid005958 with          128  processes
+ Node number          14  is nid005961 with          128  processes
+ Node number          15  is nid005965 with          128  processes
+
+ Process grid is (           8 ,           16 ,           16 )
+ Array size is   (         256 ,          128 ,          128 )
+ Global size is  (        2048 ,         2048 ,         2048 )
+
+ Total amount of data =    64.000000000000000       GiB
+
+ Clock resolution is    1.0000000000000000E-003 , usecs
+
+ Using the following IO methods
+ ------------------------------
+ serial                                                          
+ mpiio                                                           
+ adios                                                           
+
+ Using the following stripings
+ -----------------------------
+ unstriped                                                       
+ striped                                                         
+ fullstriped                                                     
+
+
+ ------
+ Serial                                                          
+ ------
+
+ Writing to unstriped/serial.dat                                            
+ time =    70.737105730921030      , rate =   0.90475853286182639       GiB/s
+ Writing to striped/serial.dat                                              
+ time =    70.628282815217972      , rate =   0.90615257017419937       GiB/s
+ Writing to fullstriped/serial.dat                                          
+ time =    71.586797352880239      , rate =   0.89401960091213672       GiB/s
+
+ ------
+ MPI-IO                                                          
+ ------
+
+ Writing to unstriped/mpiio.dat                                             
+ time =    71.686749611049891      , rate =   0.89277307657613414       GiB/s
+ Writing to striped/mpiio.dat                                               
+ time =    62.403263434767723      , rate =    1.0255873888214420       GiB/s
+ Writing to fullstriped/mpiio.dat                                           
+ time =    74.637500684708357      , rate =   0.85747780154584197       GiB/s
+
+ ------
+ Adios2                                                          
+ ------
+
+ Writing to unstriped/adios.dat                                             
+ time =    6.0664797956123948      , rate =    10.549775513352612       GiB/s
+ Writing to striped/adios.dat                                               
+ time =    2.0990426177158952      , rate =    30.490090796556842       GiB/s
+ Writing to fullstriped/adios.dat                                           
+ time =    1.7220032587647438      , rate =    37.166015612484699       GiB/s
+
+ --------
+ Finished
+ --------
+
+\n++Energy use:
+JobID          NNodes   NTasks ReqCPUFreq ElapsedRaw ConsumedEnergyRaw 
+------------ -------- -------- ---------- ---------- ----------------- 
+3050093            16             Unknown        635                   
+3050093.bat+        1        1          0        635                 0 
+3050093.ext+       16       16          0        635                 0 
+3050093.0          16     2048         2G        507           2361457 
+Submitted batch job 3050127

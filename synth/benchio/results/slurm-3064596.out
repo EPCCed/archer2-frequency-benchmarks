@@ -1,0 +1,174 @@
+#!/bin/bash
+
+# Slurm job options (name, compute nodes, job time)
+#SBATCH --job-name=benchio
+#SBATCH --time=00:20:00
+#SBATCH --nodes=16
+#SBATCH --tasks-per-node=128
+#SBATCH --cpus-per-task=1
+# Replace [budget code] below with your budget code (e.g. t01)
+#SBATCH --account=z19
+#SBATCH --partition=standard
+#SBATCH --qos=short
+
+cat $0
+
+module swap craype-network-ofi craype-network-ucx
+module swap cray-mpich cray-mpich-ucx
+
+module use /work/z19/shared/sfarr/modulefiles
+module load adios/2.8.3
+
+module load cray-hdf5-parallel
+module load cray-netcdf-hdf5parallel
+
+export OMP_NUM_THREADS=1
+
+ulimit -s unlimited
+
+# Launch the parallel job
+
+export FI_OFI_RXM_SAR_LIMIT=64K
+export MPICH_MPIIO_HINTS=*:cray_cb_write_lock_mode=2,*:cray_cb_nodes_multiplier=4
+
+srun --unbuffered --distribution=block:block --hint=nomultithread \
+	/work/z19/z19/shared/ARCHER2_CSF/benchio/benchio/benchio 2048 2048 2048 global mpiio fullstriped
+
+srun --unbuffered --distribution=block:block --hint=nomultithread \
+        /work/z19/z19/shared/ARCHER2_CSF/benchio/benchio/benchio 2048 2048 2048 global adios unstriped
+
+sleep 120
+echo "\n++Energy use:"
+sacct -j $SLURM_JOB_ID --format="JobID,NNodes,NTasks,ReqCPUFreq,ElapsedRaw,ConsumedEnergyRaw"
+
+sbatch 3_sub.slurm
+
+Inactive Modules:
+  1) cray-mpich
+
+
+Lmod is automatically replacing "cce/11.0.4" with "gcc/10.2.0".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.0.0" with "PrgEnv-gnu/8.0.0".
+
+
+Lmod is automatically replacing "craype-network-ucx" with "craype-network-ofi".
+
+
+Inactive Modules:
+  1) cray-mpich-ucx
+
+
+ Simple Parallel IO benchmark
+ ----------------------------
+
+ Running on         2048  process(es)
+
+ Running on           16  nodes
+ Node number           0  is nid001257 with          128  processes
+ Node number           1  is nid001280 with          128  processes
+ Node number           2  is nid001281 with          128  processes
+ Node number           3  is nid001282 with          128  processes
+ Node number           4  is nid001286 with          128  processes
+ Node number           5  is nid001287 with          128  processes
+ Node number           6  is nid001307 with          128  processes
+ Node number           7  is nid001318 with          128  processes
+ Node number           8  is nid001326 with          128  processes
+ Node number           9  is nid001327 with          128  processes
+ Node number          10  is nid001330 with          128  processes
+ Node number          11  is nid001332 with          128  processes
+ Node number          12  is nid001333 with          128  processes
+ Node number          13  is nid001334 with          128  processes
+ Node number          14  is nid001335 with          128  processes
+ Node number          15  is nid001336 with          128  processes
+
+ Process grid is (           8 ,           16 ,           16 )
+ Array size is   (         256 ,          128 ,          128 )
+ Global size is  (        2048 ,         2048 ,         2048 )
+
+ Total amount of data =    64.000000000000000       GiB
+
+ Clock resolution is    1.0000000000000000E-003 , usecs
+
+ Using the following IO methods
+ ------------------------------
+ mpiio                                                           
+
+ Using the following stripings
+ -----------------------------
+ fullstriped                                                     
+
+
+ ------
+ MPI-IO                                                          
+ ------
+
+ Writing to fullstriped/mpiio.dat                                           
+ time =    7.5280750812962651      , rate =    8.5015092581913763       GiB/s
+
+ --------
+ Finished
+ --------
+
+
+ Simple Parallel IO benchmark
+ ----------------------------
+
+ Running on         2048  process(es)
+
+ Running on           16  nodes
+ Node number           0  is nid001257 with          128  processes
+ Node number           1  is nid001280 with          128  processes
+ Node number           2  is nid001281 with          128  processes
+ Node number           3  is nid001282 with          128  processes
+ Node number           4  is nid001286 with          128  processes
+ Node number           5  is nid001287 with          128  processes
+ Node number           6  is nid001307 with          128  processes
+ Node number           7  is nid001318 with          128  processes
+ Node number           8  is nid001326 with          128  processes
+ Node number           9  is nid001327 with          128  processes
+ Node number          10  is nid001330 with          128  processes
+ Node number          11  is nid001332 with          128  processes
+ Node number          12  is nid001333 with          128  processes
+ Node number          13  is nid001334 with          128  processes
+ Node number          14  is nid001335 with          128  processes
+ Node number          15  is nid001336 with          128  processes
+
+ Process grid is (           8 ,           16 ,           16 )
+ Array size is   (         256 ,          128 ,          128 )
+ Global size is  (        2048 ,         2048 ,         2048 )
+
+ Total amount of data =    64.000000000000000       GiB
+
+ Clock resolution is    1.0000000000000000E-003 , usecs
+
+ Using the following IO methods
+ ------------------------------
+ adios                                                           
+
+ Using the following stripings
+ -----------------------------
+ unstriped                                                       
+
+
+ ------
+ Adios2                                                          
+ ------
+
+ Writing to unstriped/adios.dat                                             
+ time =    3.3878771811723709      , rate =    18.890885524324961       GiB/s
+
+ --------
+ Finished
+ --------
+
+\n++Energy use:
+JobID          NNodes   NTasks ReqCPUFreq ElapsedRaw ConsumedEnergyRaw 
+------------ -------- -------- ---------- ---------- ----------------- 
+3064596            16             Unknown        165                   
+3064596.bat+        1        1          0        165                 0 
+3064596.ext+       16       16          0        165                 0 
+3064596.0          16     2048         2G         21             95951 
+3064596.1          16     2048         2G         13             45512 
+Submitted batch job 3064663
